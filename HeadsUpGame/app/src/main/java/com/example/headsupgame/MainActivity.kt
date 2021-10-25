@@ -59,10 +59,7 @@ class MainActivity : AppCompatActivity() {
         var helper = DBHelper(applicationContext)
         helper.readData()
 
-        btStart.setOnClickListener {
-            getData()
-            //requestAPI()
-            }
+        btStart.setOnClickListener { getData()  }
         btAdd.setOnClickListener {
             val intent = Intent(this, AddCelebrites::class.java)
             startActivity(intent)
@@ -126,7 +123,6 @@ class MainActivity : AppCompatActivity() {
             if (gameActive) {
                 celeb++
                 getCelebrity(celeb)
-              //  newCelebrity(celeb)
                 updateStatus(false)
             } else {
                 updateStatus(false)
