@@ -89,8 +89,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
     private fun newTimer() {
         if (!gameActive) {
             gameActive = true
@@ -142,55 +140,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun requestAPI() {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            val data = async {
-//                getCelebrities()
-//            }.await()
-//            if (data.isNotEmpty()) {
-//                withContext(Dispatchers.Main) {
-//                    parseJSON(data)
-//                    celebrities.shuffle()
-//                    newCelebrity(0)
-//                    newTimer()
-//                }
-//            } else {
-//
-//            }
-//        }
-//    }
-
-//    private suspend fun parseJSON(result: String) {
-//        withContext(Dispatchers.Main) {
-//            celebrities.clear()
-//            val jsonArray = JSONArray(result)
-//            for (i in 0 until jsonArray.length()) {
-//                celebrities.add(jsonArray.getJSONObject(i))
-//            }
-//        }
-//    }
-
-
-//    private fun getCelebrities(): String {
-//        var response = ""
-//        try {
-//            response = URL("https://dojo-recipes.herokuapp.com/celebrities/")
-//                .readText(Charsets.UTF_8)
-//        } catch (e: Exception) {
-//            println("Error: $e")
-//        }
-//        return response
-//    }
-
-//    private fun newCelebrity(id: Int) {
-//        if (id < celebrities.size) {
-//            tvName.text = celebrities[id].getString("name")
-//            tvTaboo1.text = celebrities[id].getString("taboo1")
-//            tvTaboo2.text = celebrities[id].getString("taboo2")
-//            tvTaboo3.text = celebrities[id].getString("taboo3")
-//        }
-//
-//    }
     private fun updateStatus(showCelebrity: Boolean){
         if(showCelebrity){
             llCelebrity.isVisible = true
